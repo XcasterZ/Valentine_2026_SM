@@ -409,12 +409,12 @@ const subtitleStyle = computed(() => ({
 
 /* Responsive สำหรับชื่อ */
 @media (max-width: 768px) {
-  .name-tag {
+  /* .name-tag {
     flex-direction: column;
     gap: 8px;
     padding: 10px 20px;
     margin: 0.5rem 0 1rem;
-  }
+  } */
   
   .name-heart {
     font-size: 1.2rem;
