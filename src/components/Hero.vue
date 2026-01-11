@@ -388,13 +388,13 @@ const subtitleStyle = computed(() => ({
   transform: translateY(0);
 }
 
-/* สำหรับภาษาไทย */
-:global(body:lang(th)) .hero-title {
+/* Apply Thai fonts directly for this component so they display regardless of document lang */
+.hero-title {
   font-family: 'Kanit', 'Sarabun', sans-serif;
   line-height: 1.1;
 }
 
-:global(body:lang(th)) .name-text {
+.name-text {
   font-family: 'Kanit', 'Sarabun', sans-serif;
   font-weight: 700;
 }

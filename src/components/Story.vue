@@ -270,10 +270,10 @@ const photos = ref([
 
 // Computed
 const totalPages = computed(() => photos.value.length)
-const headerStyle = computed(() => ({
-  transform: `translateY(${props.isActive ? props.scrollProgress * 0.1 : 0}px)`,
-  opacity: props.isActive ? 1 - (props.scrollProgress * 0.01) : 0
-}))
+// const headerStyle = computed(() => ({
+//   transform: `translateY(${props.isActive ? props.scrollProgress * 0.1 : 0}px)`,
+//   opacity: props.isActive ? 1 - (props.scrollProgress * 0.01) : 0
+// }))
 
 // ตรวจสอบหน้าจอ
 const checkViewport = () => {
@@ -536,15 +536,15 @@ const openBook = () => {
 }
 
 // Auto page change based on scroll progress
-watch(() => props.scrollProgress, (progress) => {
-  if (!props.isActive || isAnimating.value) return
+// watch(() => props.scrollProgress, (progress) => {
+//   if (!props.isActive || isAnimating.value) return
   
-  const targetPage = Math.ceil((progress / 100) * totalPages.value)
-  if (targetPage !== currentPage.value && targetPage >= 1 && targetPage <= totalPages.value) {
-    const direction = targetPage > currentPage.value ? 'next' : 'prev'
-    animatePageChange(targetPage, direction)
-  }
-})
+//   const targetPage = Math.ceil((progress / 100) * totalPages.value)
+//   if (targetPage !== currentPage.value && targetPage >= 1 && targetPage <= totalPages.value) {
+//     const direction = targetPage > currentPage.value ? 'next' : 'prev'
+//     animatePageChange(targetPage, direction)
+//   }
+// })
 
 // When section becomes active
 watch(() => props.isActive, (isActive) => {

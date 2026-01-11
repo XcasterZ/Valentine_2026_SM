@@ -10,7 +10,7 @@
     
     <!-- เอฟเฟกต์ดาวตก -->
     <div class="falling-stars">
-      <div class="star" v-for="n in 20" :key="n" :style="starStyle(n)"></div>
+      <div class="star" v-for="(s, i) in starStyles" :key="i" :style="s"></div>
     </div>
     
     <!-- ใจกลางเนื้อหา -->
@@ -92,7 +92,7 @@
 </template>
 
 <script setup>
-import { defineProps, ref, computed, onMounted, watch } from 'vue'
+import { defineProps, ref, computed, onMounted, watch, nextTick } from 'vue'
 
 const props = defineProps({
   isActive: Boolean,
@@ -164,6 +164,25 @@ const t = (key) => {
 // Ref
 const sectionRef = ref(null)
 
+// Precompute star styles once to avoid recalculating on every render
+const starStyles = ref([])
+
+onMounted(() => {
+  if (!starStyles.value.length) {
+    starStyles.value = Array.from({ length: 20 }).map(() => {
+      const delay = Math.random() * 5
+      const duration = 3 + Math.random() * 2
+      const left = Math.random() * 100
+      return {
+        left: `${left}%`,
+        animationDelay: `${delay}s`,
+        animationDuration: `${duration}s`,
+        opacity: 0.3 + Math.random() * 0.5
+      }
+    })
+  }
+})
+
 // Computed styles สำหรับ animation
 const contentStyle = computed(() => ({
   transform: `translateY(${props.isActive ? props.scrollProgress * 0.2 : 30}px)`,
@@ -179,18 +198,7 @@ const backButtonStyle = computed(() => ({
   opacity: props.isActive ? 1 - (props.scrollProgress * 0.01) : 0
 }))
 
-// สไตล์สำหรับดาวตกแบบสุ่ม
-const starStyle = (index) => {
-  const delay = Math.random() * 5
-  const duration = 3 + Math.random() * 2
-  const left = Math.random() * 100
-  return {
-    left: `${left}%`,
-    animationDelay: `${delay}s`,
-    animationDuration: `${duration}s`,
-    opacity: 0.3 + Math.random() * 0.5
-  }
-}
+// Note: star styles are precomputed in `starStyles` to avoid recalculation
 
 // Methods
 // const restartJourney = () => {
@@ -217,11 +225,12 @@ const shareLove = () => {
 watch(() => props.isActive, (active) => {
   if (active) {
     // เพิ่ม effect เมื่อแสดงหน้า ending
-    setTimeout(() => {
+    // Use nextTick to add the class as soon as DOM is ready (avoid a forced delay)
+    nextTick(() => {
       if (sectionRef.value) {
         sectionRef.value.classList.add('ending-enter')
       }
-    }, 300)
+    })
   }
 }, { immediate: true })
 </script>
@@ -286,6 +295,8 @@ watch(() => props.isActive, (active) => {
   height: 20px;
   background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.8));
   animation: fallingStar linear infinite;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
 @keyframes fallingStar {
@@ -310,6 +321,8 @@ watch(() => props.isActive, (active) => {
   max-width: 800px;
   padding: 20px;
   width: 100%;
+  will-change: transform, opacity;
+  transform: translateZ(0);
 }
 
 /* หัวใจลอย */
@@ -635,20 +648,20 @@ watch(() => props.isActive, (active) => {
   animation: float 6s ease-in-out infinite, heartPulse 2s ease-in-out infinite;
 }
 
-/* สำหรับภาษาไทย */
-:global(body:lang(th)) .ending-title,
-:global(body:lang(th)) .quote,
-:global(body:lang(th)) .quote-author,
-:global(body:lang(th)) .message-text,
-:global(body:lang(th)) .date-text,
-:global(body:lang(th)) .action-btn,
-:global(body:lang(th)) .footer-text,
-:global(body:lang(th)) .footer-date,
-:global(body:lang(th)) .back-to-gallery-btn {
-  font-family: 'Kanit', 'Sarabun', sans-serif !important;
+/* Apply Thai fonts directly for this component so they display regardless of document lang */
+.ending-title,
+.quote,
+.quote-author,
+.message-text,
+.date-text,
+.action-btn,
+.footer-text,
+.footer-date,
+.back-to-gallery-btn {
+  font-family: 'Kanit', 'Sarabun', sans-serif;
 }
 
-:global(body:lang(th)) .ending-title {
+.ending-title {
   line-height: 1.1;
 }
 </style>
