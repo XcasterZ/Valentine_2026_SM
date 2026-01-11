@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day</title>
+    
+    <!-- ภาษาอังกฤษ -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- ภาษาไทย -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+      /* กำหนด CSS Variables */
+      :root {
+        --en-heading: 'Playfair Display', serif;
+        --en-body: 'Inter', sans-serif;
+        --th-heading: 'Kanit', sans-serif;
+        --th-body: 'Sarabun', sans-serif;
+      }
+      
+      /* พื้นฐาน - ภาษาอังกฤษ */
+      body {
+        font-family: var(--en-body);
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        font-family: var(--en-heading);
+      }
+      
+      /* ภาษาไทย */
+      body:lang(th) {
+        font-family: var(--th-body);
+        line-height: 1.7;
+      }
+      
+      body:lang(th) h1,
+      body:lang(th) h2,
+      body:lang(th) h3,
+      body:lang(th) h4,
+      body:lang(th) h5,
+      body:lang(th) h6,
+      body:lang(th) .hero-title,
+      body:lang(th) .story-title,
+      body:lang(th) .ending-title,
+      body:lang(th) .ebook-title,
+      body:lang(th) .nav-btn,
+      body:lang(th) .action-btn,
+      body:lang(th) button {
+        font-family: var(--th-heading);
+        font-weight: 600;
+      }
+      
+      /* ปรับขนาดฟอนต์ไทยให้เหมาะสม */
+      body:lang(th) {
+        font-size: 1.05em;
+      }
+      
+      body:lang(th) p {
+        line-height: 1.8;
+        letter-spacing: 0.01em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
