@@ -37,7 +37,6 @@
               <img 
                 v-if="photos[currentPage - 2] && currentPage > 1" 
                 :src="photos[currentPage - 2].url" 
-                :alt="photos[currentPage - 2].title"
                 class="vertical-photo"
                 ref="leftImageRef"
               />
@@ -212,60 +211,69 @@ const windowWidth = ref(window.innerWidth)
 const photos = ref([
   {
     id: 1,
-    url: 'https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=400&h=600&fit=crop',
-    title: 'First Sunset Together',
-    date: 'June 15, 2020',
-    description: 'Watching the sunset hand in hand'
+    url: 'https://pornsawantest.s3.eu-north-1.amazonaws.com/img_valentine/D136ED6E-2810-4E52-94B5-B964A08D4474.jpg',
   },
   {
     id: 2,
-    url: 'https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=400&h=600&fit=crop',
-    title: 'Coffee Shop Date',
-    date: 'July 20, 2020',
-    description: 'Our favorite corner table'
+    url: 'https://pornsawantest.s3.eu-north-1.amazonaws.com/img_valentine/S__42647557_0.jpg',
   },
   {
     id: 3,
-    url: 'https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=400&h=600&fit=crop',
-    title: 'Mountain Adventure',
-    date: 'August 7, 2020',
-    description: 'Reaching new heights together'
+    url: 'https://pornsawantest.s3.eu-north-1.amazonaws.com/img_valentine/S__42647558_0.jpg',
   },
   {
     id: 4,
-    url: 'https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=400&h=600&fit=crop',
-    title: 'Beach Day',
-    date: 'September 12, 2020',
-    description: 'Building sandcastles by the shore'
+    url: 'https://pornsawantest.s3.eu-north-1.amazonaws.com/img_valentine/S__42647559_0.jpg',
   },
   {
     id: 5,
-    url: 'https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=400&h=600&fit=crop',
-    title: 'Autumn Colors',
-    date: 'October 30, 2020',
-    description: 'Walking through fallen leaves'
+    url: 'https://pornsawantest.s3.eu-north-1.amazonaws.com/img_valentine/S__42647561_0.jpg',
   },
   {
     id: 6,
-    url: 'https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=400&h=600&fit=crop',
-    title: 'Winter Warmth',
-    date: 'December 24, 2020',
-    description: 'First Christmas by the fireplace'
+    url: 'https://pornsawantest.s3.eu-north-1.amazonaws.com/img_valentine/S__42647563_0.jpg',
   },
   {
     id: 7,
-    url: 'https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=400&h=600&fit=crop',
-    title: 'Spring Blooms',
-    date: 'March 21, 2021',
-    description: 'Cherry blossoms and new beginnings'
+    url: 'https://pornsawantest.s3.eu-north-1.amazonaws.com/img_valentine/S__42647564_0.jpg',
   },
   {
     id: 8,
-    url: 'https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=400&h=600&fit=crop',
-    title: 'Summer Nights',
-    date: 'July 4, 2021',
-    description: 'Stargazing till dawn'
-  }
+    url: 'https://pornsawantest.s3.eu-north-1.amazonaws.com/img_valentine/S__42647569_0.jpg',
+  },
+  {
+    id: 9,
+    url: 'https://pornsawantest.s3.eu-north-1.amazonaws.com/img_valentine/S__42647573_0.jpg',
+  },
+  {
+    id: 10,
+    url: 'https://pornsawantest.s3.eu-north-1.amazonaws.com/img_valentine/S__42647579_0.jpg',
+  },
+  {
+    id: 11,
+    url: 'https://pornsawantest.s3.eu-north-1.amazonaws.com/img_valentine/S__42647580_0.jpg',
+  },
+  {
+    id: 12,
+    url: 'https://pornsawantest.s3.eu-north-1.amazonaws.com/img_valentine/S__42647582_0.jpg',
+  },
+  {
+    id: 13,
+    url: 'https://pornsawantest.s3.eu-north-1.amazonaws.com/img_valentine/S__42647583_0.jpg',
+  },
+  {
+    id: 14,
+    url: 'https://pornsawantest.s3.eu-north-1.amazonaws.com/img_valentine/S__42647586_0.jpg',
+  },
+  {
+    id: 15,
+    url: 'https://pornsawantest.s3.eu-north-1.amazonaws.com/img_valentine/S__42647594_0.jpg',
+  },
+  {
+    id: 16,
+    url: 'https://pornsawantest.s3.eu-north-1.amazonaws.com/img_valentine/S__42647599_0.jpg',
+  },
+
 ])
 
 // Computed
