@@ -52,7 +52,7 @@
         
         <!-- วันที่สำคัญ -->
         <div class="date-marker">
-          <div class="date-icon">📅</div>
+          <div class="date-icon">💘</div>
           <p class="date-text">{{ t('dateText') }}</p>
         </div>
         
