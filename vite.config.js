@@ -10,9 +10,9 @@ export default defineConfig(({ mode }) => {
       name: 'social-preview-urls',
       transformIndexHtml(html) {
         if (!siteUrl) return html;
-        const imageUrl = new URL('brand/og.png', siteUrl).href;
+        const imageUrl = new URL('brand/og-ai.jpg', siteUrl).href;
         return {
-          html: html.replaceAll('content="/brand/og.png"', `content="${imageUrl}"`),
+          html: html.replaceAll('content="/brand/og-ai.jpg"', `content="${imageUrl}"`),
           tags: [
             { tag: 'link', attrs: { rel: 'canonical', href: siteUrl }, injectTo: 'head' },
             { tag: 'meta', attrs: { property: 'og:url', content: siteUrl }, injectTo: 'head' }

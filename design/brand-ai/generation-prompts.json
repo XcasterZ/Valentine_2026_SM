@@ -1,0 +1,19 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "date": "2026-10-03",
+  "reference": "Icon and OG used logo-original.png as the brand reference.",
+  "prompts": [
+    {
+      "key": "brand_logo_ai",
+      "prompt": "Use case: logo-brand. Asset type: production brand logo for a romantic celestial Valentine website for Tui and Saimai. Create ONE exceptionally refined standalone emblem, no wordmark or text. A beautiful heart formed from two gracefully interlocking sculptural ribbons, suggesting two people and an infinite bond, with one restrained champagne-gold orbit sweeping around it and a single tiny four-point star. Elegant, intentional silhouette and spacious inner negative space. Rose-pink to ruby satin enamel, delicate gold edges, subtle dimensional highlights with a sophisticated jewelry-like finish; much more polished than cartoon clipart, but clean and readable at 40px in a website header. Balanced centered square composition, symbol occupies 84% of canvas, no excessive thin details. Color palette rose #ff7197, ruby #d92460, warm champagne #e6c280. Genuinely transparent background with preserved alpha, no background glow rectangle, no mockup, no shadow on a ground surface, no checkerboard, no watermark, no letters. Output just the finished emblem, high resolution."
+    },
+    {
+      "key": "brand_icon_ai",
+      "prompt": "Use case: logo-brand. Asset type: finished app icon and browser favicon for the Tui and Saimai celestial Valentine website. Input image 1 is the approved brand emblem and style reference. Create a matching square icon: preserve the recognizable two interlocking rose-pink and ruby heart ribbons, champagne-gold orbit, and one small four-point star. Simplify small internal highlights and thin details so the silhouette reads clearly at 32px; beautiful polished satin-enamel finish with restrained gold edging. Center the emblem at 74% of canvas width with generous padding. Put it on an edge-to-edge deep plum-black #100a14 square background, very subtle burgundy radial lighting, crisp clean edges. No letters or text, no extra symbols, no added sparkles, no external drop shadow, no device mockup, no perspective tilt. High-resolution 1:1 square production artwork, not a collage."
+    },
+    {
+      "key": "brand_og_ai",
+      "prompt": "Use case: ads-marketing. Asset type: exquisite finished Open Graph share card for a personal celestial Valentine website, WIDE 1200x630 layout (1.905:1), intended to remain beautiful and readable as a small social preview. Input image 1 is the approved brand emblem: use this same recognizable interlocking rose-pink and ruby heart-ribbon emblem with champagne-gold orbit and tiny star as the main artwork on the right, preserving its identity and refined jewelry finish. Background deep almost-black plum #0b0810, a soft burgundy nebula glow behind the heart, a few understated starlight specks, cinematic but calm. Elegant editorial composition, generous negative space and margins, no busy effects. Left half carries large beautifully set readable Thai typography in warm ivory, exactly: \"ตุ้ย & สายไหม\". Beneath it smaller readable soft pink Thai text exactly: \"16 ความทรงจำ หนึ่งหัวใจ\". Small champagne-gold uppercase eyebrow above exactly: \"CELESTIAL VALENTINE 2026\". Refined small lower-left line exactly: \"FOREVER & ALWAYS\". Render the Thai words and tone marks correctly, verbatim; no additional words, no distorted lettering. Keep all text and the full heart safely at least 75px inside every edge, with clear separation between typography and artwork. Luxurious romantic art direction, crisp type, strong hierarchy, sophisticated restrained lighting, no cute cartoon styling, no UI buttons, no screenshot, no device mockup, no watermark. Output one single full-bleed wide finished card."
+    }
+  ]
+}
