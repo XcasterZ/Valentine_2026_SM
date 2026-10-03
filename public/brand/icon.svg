@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <defs>
+    <linearGradient id="tile" x2="80" y2="80" gradientUnits="userSpaceOnUse"><stop stop-color="#23101d"/><stop offset="1" stop-color="#0b0810"/></linearGradient>
+    <linearGradient id="rose" x1="14" y1="14" x2="45" y2="53" gradientUnits="userSpaceOnUse"><stop stop-color="#ffabc1"/><stop offset=".48" stop-color="#ff638e"/><stop offset="1" stop-color="#d92460"/></linearGradient>
+    <linearGradient id="gold" x1="4" y1="44" x2="59" y2="17" gradientUnits="userSpaceOnUse"><stop stop-color="#be9257"/><stop offset=".52" stop-color="#ffdfaa"/><stop offset="1" stop-color="#d6b174"/></linearGradient>
+  </defs>
+  <rect width="80" height="80" rx="19" fill="url(#tile)"/>
+  <rect x=".75" y=".75" width="78.5" height="78.5" rx="18.25" stroke="#ffb8cd" stroke-opacity=".14" stroke-width="1.5"/>
+  <g transform="translate(8 8)">
+    <ellipse cx="32" cy="32" rx="30" ry="12" transform="rotate(-28 32 32)" stroke="#d6b174" stroke-width="1.5" opacity=".35"/>
+    <path d="M32 53C28 49 9 36 9 23C9 11 23 7 32 18C41 7 55 11 55 23C55 36 36 49 32 53Z" fill="url(#rose)"/>
+    <path d="M17 22C17 17 23 16 26 20" stroke="#ffe6ed" stroke-width="2.5" stroke-linecap="round" opacity=".75"/>
+    <path d="M5 41C7 53 47 38 59 20" stroke="url(#gold)" stroke-width="2" stroke-linecap="round"/>
+    <path d="M54 6L55.6 10.4L60 12L55.6 13.6L54 18L52.4 13.6L48 12L52.4 10.4Z" fill="#ffe0ab"/>
+  </g>
+</svg>

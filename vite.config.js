@@ -1,18 +1,24 @@
-import { fileURLToPath, URL } from 'node:url'
+import { defineConfig, loadEnv } from 'vite';
 
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import vueDevTools from 'vite-plugin-vue-devtools'
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd(), 'VITE_');
+  const configuredUrl = env.VITE_SITE_URL?.trim();
+  const siteUrl = configuredUrl ? new URL('/', configuredUrl).href : null;
 
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [
-    vue(),
-    vueDevTools(),
-  ],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    },
-  },
-})
+  return {
+    plugins: [{
+      name: 'social-preview-urls',
+      transformIndexHtml(html) {
+        if (!siteUrl) return html;
+        const imageUrl = new URL('brand/og.png', siteUrl).href;
+        return {
+          html: html.replaceAll('content="/brand/og.png"', `content="${imageUrl}"`),
+          tags: [
+            { tag: 'link', attrs: { rel: 'canonical', href: siteUrl }, injectTo: 'head' },
+            { tag: 'meta', attrs: { property: 'og:url', content: siteUrl }, injectTo: 'head' }
+          ]
+        };
+      }
+    }]
+  };
+});

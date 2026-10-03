@@ -1,71 +1,211 @@
 <!DOCTYPE html>
-<html lang="">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Valentine's Day</title>
-    
-    <!-- ภาษาอังกฤษ -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <!-- ภาษาไทย -->
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <style>
-      /* กำหนด CSS Variables */
-      :root {
-        --en-heading: 'Playfair Display', serif;
-        --en-body: 'Inter', sans-serif;
-        --th-heading: 'Kanit', sans-serif;
-        --th-body: 'Sarabun', sans-serif;
-      }
-      
-      /* พื้นฐาน - ภาษาอังกฤษ */
-      body {
-        font-family: var(--en-body);
-      }
-      
-      h1, h2, h3, h4, h5, h6 {
-        font-family: var(--en-heading);
-      }
-      
-      /* ภาษาไทย */
-      body:lang(th) {
-        font-family: var(--th-body);
-        line-height: 1.7;
-      }
-      
-      body:lang(th) h1,
-      body:lang(th) h2,
-      body:lang(th) h3,
-      body:lang(th) h4,
-      body:lang(th) h5,
-      body:lang(th) h6,
-      body:lang(th) .hero-title,
-      body:lang(th) .story-title,
-      body:lang(th) .ending-title,
-      body:lang(th) .ebook-title,
-      body:lang(th) .nav-btn,
-      body:lang(th) .action-btn,
-      body:lang(th) button {
-        font-family: var(--th-heading);
-        font-weight: 600;
-      }
-      
-      /* ปรับขนาดฟอนต์ไทยให้เหมาะสม */
-      body:lang(th) {
-        font-size: 1.05em;
-      }
-      
-      body:lang(th) p {
-        line-height: 1.8;
-        letter-spacing: 0.01em;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>The Celestial Memories | วาเลนไทน์สำหรับสายไหม</title>
+  <meta name="description" content="16 ความทรงจำ หนึ่งหัวใจ — เรื่องราวความรักของตุ้ยและสายไหม พร้อมจดหมายจากใจในวันวาเลนไทน์" />
+  <meta name="theme-color" content="#0b0810" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="th_TH" />
+  <meta property="og:site_name" content="The Celestial Memories" />
+  <meta property="og:title" content="ตุ้ย &amp; สายไหม | 16 ความทรงจำ หนึ่งหัวใจ" />
+  <meta property="og:description" content="เรื่องราวความรักที่เก็บไว้ในทุกภาพ และจดหมายจากใจที่เขียนเพื่อคนพิเศษที่สุด" />
+  <meta property="og:image" content="/brand/og.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="หัวใจสีชมพูพร้อมวงโคจรสีทอง และข้อความ ตุ้ย &amp; สายไหม — 16 ความทรงจำ หนึ่งหัวใจ" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ตุ้ย &amp; สายไหม | 16 ความทรงจำ หนึ่งหัวใจ" />
+  <meta name="twitter:description" content="เรื่องราวความรักที่เก็บไว้ในทุกภาพ และจดหมายจากใจที่เขียนเพื่อคนพิเศษที่สุด" />
+  <meta name="twitter:image" content="/brand/og.png" />
+  <meta name="twitter:image:alt" content="หัวใจสีชมพูพร้อมวงโคจรสีทอง และชื่อ ตุ้ย &amp; สายไหม" />
+  <link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48 64x64" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/brand/icon-192.png" />
+  <link rel="icon" type="image/svg+xml" sizes="any" href="/brand/icon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/brand/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="./src/styles/main.css" />
+</head>
+<body class="audio-muted">
+  <!-- 3D WebGL Canvas Layer -->
+  <canvas id="webgl-canvas" aria-hidden="true"></canvas>
+
+  <!-- Visual Atmospheric Layers -->
+  <div class="cinematic-vignette"></div>
+  <div class="noise-overlay"></div>
+
+  <!-- Interactive Custom Cursor -->
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring"></div>
+
+  <!-- UI Overlay Hierarchy -->
+  <div id="ui-root">
+    <!-- Top Bar -->
+    <header class="top-bar">
+      <div class="brand-monogram">
+        <div class="monogram-badge"><img src="/brand/logo.svg" width="40" height="40" alt="" /></div>
+        <div class="brand-names">
+          <span class="brand-title">ตุ้ย & สายไหม</span>
+          <span class="brand-subtitle">CELESTIAL VALENTINE 2026</span>
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <!-- Sound Toggle -->
+        <button type="button" class="glass-btn audio-toggle-btn" title="Toggle Sound" aria-pressed="false">
+          <div class="sound-bars">
+            <div class="sound-bar"></div>
+            <div class="sound-bar"></div>
+            <div class="sound-bar"></div>
+          </div>
+          <span class="sound-btn-text">เปิดเสียง</span>
+        </button>
+
+        <!-- Language Toggle -->
+        <button type="button" class="glass-btn lang-toggle-btn" title="Switch Language" aria-label="Switch language">
+          <span>🌐</span>
+          <span class="lang-btn-text">EN</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Stage overlays: opacity is scrubbed by scroll progress (see main.js) -->
+    <main class="stage-container">
+      <!-- Act 1: Hero -->
+      <section class="act-section" id="act-hero">
+        <div class="act-1-content">
+          <div class="act-badge act-1-badge">CELESTIAL VALENTINE 2026</div>
+          <h1 class="act-title-hero">
+            <span class="hero-small-line">HAPPY</span>
+            <span>VALENTINE’S DAY</span>
+          </h1>
+          <div class="act-couple-tag">
+            <span class="couple-names">ตุ้ย & สายไหม</span>
+          </div>
+          <p class="act-for-whom">แด่คนพิเศษที่สุดของหัวใจ</p>
+          <button type="button" class="primary-glow-btn start-journey-btn">เปิดความทรงจำของเรา <span aria-hidden="true">↓</span></button>
+        </div>
+      </section>
+
+      <!-- Act 2: Caption that follows the photo in focus -->
+      <section class="act-section" id="act-gallery">
+        <div class="memory-caption-float" aria-live="polite">
+          <span class="memory-index">01</span>
+          <div class="memory-text">
+            <span class="memory-num">ภาพที่ 01 / 16</span>
+            <h3 class="memory-title">จุดเริ่มต้นความทรงจำ</h3>
+            <p class="memory-caption">รอยยิ้มแรกที่ทำให้โลกทั้งใบหยุดหมุน</p>
+            <button type="button" class="open-memory-btn">ดูภาพเต็ม ↗</button>
+            <div class="memory-controls" aria-label="เลือกรูปความทรงจำ">
+              <button type="button" class="memory-prev-btn" aria-label="ภาพก่อนหน้า">←</button>
+              <span class="memory-position">01 / 16</span>
+              <button type="button" class="memory-next-btn" aria-label="ภาพถัดไป">→</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Act 3: Promise (typography only, while the photos gather into a heart) -->
+      <section class="act-section" id="act-promise">
+        <div class="act-3-content">
+          <blockquote class="romantic-quote">“ฉันรักเธอไม่ใช่เพียงเพราะสิ่งที่เธอเป็น แต่เพราะสิ่งที่ฉันเป็นเมื่อฉันได้อยู่กับเธอ”</blockquote>
+          <div class="quote-author">— รอย ครอฟต์</div>
+          <p class="promise-p1">ทุกช่วงเวลากับเธอคือสมบัติล้ำค่า</p>
+        </div>
+      </section>
+
+      <!-- Act 4: Finale inside the heart of photos -->
+      <section class="act-section" id="act-final">
+        <div class="final-center">
+          <div class="final-eyebrow">FOREVER &amp; ALWAYS</div>
+          <h2 class="final-title">ตุ้ย <span class="final-amp">♥</span> สายไหม</h2>
+          <p class="final-subtitle">16 ความทรงจำ หนึ่งหัวใจ</p>
+        </div>
+        <div class="final-actions">
+          <button type="button" class="primary-glow-btn open-letter-btn" aria-haspopup="dialog" aria-controls="love-letter-dialog">
+            <span aria-hidden="true">✉</span>
+            <span class="open-letter-btn-text">เปิดอ่านจดหมาย</span>
+          </button>
+          <button type="button" class="ghost-btn restart-btn">
+            <span aria-hidden="true">↺</span>
+            <span class="restart-btn-text">ย้อนดูอีกครั้ง</span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom HUD & Navigation Controls -->
+    <footer class="bottom-bar">
+      <!-- Chapter Dots -->
+      <nav class="chapter-nav" aria-label="นำทางบท">
+        <button type="button" class="chapter-item active" aria-current="step">
+          <span class="chapter-dot" aria-hidden="true"></span>
+          <span class="chapter-label">จุดกำเนิด</span>
+        </button>
+        <button type="button" class="chapter-item">
+          <span class="chapter-dot" aria-hidden="true"></span>
+          <span class="chapter-label">อุโมงค์ความทรงจำ</span>
+        </button>
+        <button type="button" class="chapter-item">
+          <span class="chapter-dot" aria-hidden="true"></span>
+          <span class="chapter-label">คำสัญญา</span>
+        </button>
+        <button type="button" class="chapter-item">
+          <span class="chapter-dot" aria-hidden="true"></span>
+          <span class="chapter-label">จดหมายรักนิรันดร์</span>
+        </button>
+      </nav>
+
+      <!-- Central Scroll Hint Indicator -->
+      <div class="scroll-hint-wrapper">
+        <div class="mouse-icon">
+          <div class="mouse-wheel-dot"></div>
+        </div>
+        <span class="scroll-hint-text">หมุนเมาส์ หรือ ปัดหน้าจอเพื่อเริ่มการเดินทาง</span>
+      </div>
+
+      <!-- Scrubber Progress Bar -->
+      <div class="progress-container" role="progressbar" aria-label="ความคืบหน้าการเดินทาง" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="progress-track">
+          <div class="progress-fill"></div>
+        </div>
+        <div class="progress-pct">0%</div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Interactive Love Letter Modal -->
+  <div class="letter-modal-backdrop" id="love-letter-dialog" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="letter-greeting">
+    <div class="letter-paper">
+      <button type="button" class="letter-close-btn" aria-label="Close Letter">&times;</button>
+      <h3 class="letter-greeting" id="letter-greeting">ถึง สายไหม คนดีของเค้า,</h3>
+      <div class="letter-paragraphs"></div>
+      <div class="letter-signature">
+        <p class="letter-sign-text">รักเธอที่สุดตลอดกาล,</p>
+        <p class="letter-sender">ตุ้ย (Tui) 💘</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Photo Lightbox Modal -->
+  <div class="photo-lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="lightbox-title" aria-describedby="lightbox-desc">
+    <button class="lightbox-close-btn" type="button" aria-label="ปิดภาพ">&times;</button>
+    <div class="lightbox-content">
+      <div class="lightbox-img-wrapper">
+        <img class="lightbox-img" src="" alt="Memory Photo" />
+      </div>
+      <div class="lightbox-caption-box">
+        <h4 class="lightbox-title" id="lightbox-title"></h4>
+        <p class="lightbox-desc" id="lightbox-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Entry Script -->
+  <script type="module" src="./src/main.js"></script>
+</body>
 </html>
